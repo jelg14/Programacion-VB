@@ -4,8 +4,9 @@ import { switchMap, timer, map, of } from 'rxjs';
 import { URLSearchParams } from 'url';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
+
 export class ServiceService {
   private accessToken:string = '';
   private expireIn:number =0;
