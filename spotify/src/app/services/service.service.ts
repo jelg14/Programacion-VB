@@ -35,8 +35,8 @@ export class ServiceService {
     return this.getQuery('browse/categories?limit=25')
   }
 
-  getArtists(termino:string){
-    return this.getQuery(`search?q=${termino}&type=artist&limit=15`)
+  getArtists(){
+    return this.getQuery(`search?q=genre:rock&type=artist&limit=10`)
   }
 
   getArtist(id:string){
@@ -79,6 +79,7 @@ export class ServiceService {
     console.log(`tiempo transcurrido`,timeElapsed)
     return this.expireIn - timeElapsed<10;
   }
+  
   private startTokenTimer(){
     const timeout = this.expireIn - 10;
     console.log ('Token Timer',timeout)

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artista',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './artista.component.css'
 })
 export class ArtistaComponent {
+  id: string | null;
 
+  constructor(private route:ActivatedRoute){
+    this.id = this.route.snapshot.paramMap.get('id');
+  }
 }
