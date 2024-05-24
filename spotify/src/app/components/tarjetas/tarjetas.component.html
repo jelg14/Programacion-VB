@@ -1,16 +1,13 @@
-<div class="card-grid-container ">
-  <div class="card" style="width: 18rem;" *ngFor="let i of items" >
-    <img src='{{i.images[0].url}}' alt='{{i.name}}'>
-    <div class="card-body">
-      <h5 class="card-title">{{i.name}}</h5>
-      <p class="card-text">genero: {{i.genres[0]}}</p>
-      <button (click)="verArtista(i)" class="btn btn-primary">Go somewhere</button>
-    </div>
+<div class="card-columns m-5 animated fadeIn" style="width: 18rem;" >
+  <div (click)="verArtista(item)" *ngFor="let item of items" class="card puntero">
+      <img [src]="item.images | noimage" alt="Card image" style="width: 100%;">
+      <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">
+              <span *ngFor="let artista of item.artists" class="badge badge-pill badge-primary">
+                  {{ artista.name }}
+              </span>
+          </p>
+      </div>
   </div>
 </div>
-
-
-<!-- TAREA: hacerlo dinamico y agregar una imagen, llamar al metodo verArtista
- y al hacer clic, recorrer items y renderizar n items repetidos
-*artista-nombre-listado de artistas-imagen
--->
