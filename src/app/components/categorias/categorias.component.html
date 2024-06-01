@@ -1,0 +1,10 @@
+<div class="card-columns m-5 animated fadeIn">
+    <div class="card puntero" (click)="getCategorie(item)" *ngFor="let item of items">
+        <img [src]="item.icons | noimage" class="card-img-top" alt="Card Image">
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.id}}</p>
+            <a [href]="item.href" class="btn btn-primary" btn-primary>ver api de categoria</a>
+        </div>
+    </div>
+</div>
