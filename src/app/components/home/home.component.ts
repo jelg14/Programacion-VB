@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
 
     this.spotify.getCaterogies().subscribe(data => {
       this.categorias = data.categories.items;
-      console.log(data);
+      //console.log(this.categorias);
       this.loading = false;
     }, error => {
       this.error = true;
@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
 
     this.spotify.getArtists("genre:rock").subscribe(data => {
       this.artist = data.artists.items;
-      console.log(this.artist);
     }, error=>{
       this.error = true;
       this.loading = false;

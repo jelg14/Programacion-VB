@@ -23,14 +23,14 @@ export class SpotifyService {
   getQuery(query: string): Observable<any>{
 
         const headers = new HttpHeaders({
-          'Authorization':'Bearer ' + 'BQCbUdQGQu_09w3PqYWQJoMt3l61wGx0emUl3aaWroIiZRwaEpEnKA5wbZu96mv76Kh1XU-jfKQNNhpcSTVAqzRYEuxD7DsIschiC7HPCtW9sHXcmQg'
+          'Authorization':'Bearer ' + 'BQAZ0SYc4BUuSDRSJGalbHNtvMKZIocosb-i7aA9TVZen51tFIdj5n6wdMTqT_lJ6EwPo6JhYtTRbBlWPE0KN4FM7JSMd08ss-5D0LQEqKHyQ-qnyYE'
         });
         return this.http.get('https://api.spotify.com/v1/'+query,{headers});
 
   }
 
   getArtist2(): Observable<any> {
-    const headers = { 'Authorization': 'Bearer BQCbUdQGQu_09w3PqYWQJoMt3l61wGx0emUl3aaWroIiZRwaEpEnKA5wbZu96mv76Kh1XU-jfKQNNhpcSTVAqzRYEuxD7DsIschiC7HPCtW9sHXcmQg' };
+    const headers = { 'Authorization': 'Bearer BQAZ0SYc4BUuSDRSJGalbHNtvMKZIocosb-i7aA9TVZen51tFIdj5n6wdMTqT_lJ6EwPo6JhYtTRbBlWPE0KN4FM7JSMd08ss-5D0LQEqKHyQ-qnyYE' };
     return this.http.get('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg', { headers });
   }
 
