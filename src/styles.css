@@ -1,44 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
-
-.puntero{
-    cursor: pointer;
+.puntero {
+  cursor: pointer;
+}
+.card-title, .card-text {
+  color: black;
+}
+.badge-pill, .badge-primary {
+  margin-left: 5px;
+}
+/* animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
+}
+.animated {
+  animation-duration: 1s; -webkit-animation-duration: 1s; animation-fill-mode: both; -webkit-animation-fill-mode: both;
+}
+.img-circle {
+  border-radius: 100%; width: 150%;
+}
+body {
+  background: rgb(4,4,4);
+  background: linear-gradient(150deg, rgba(4,4,4,1) 5%, rgba(18,27,46,1) 55%, rgba(62,62,62,1) 145%);
+  color: rgb(221, 221, 221);
+  background-repeat:repeat-y;
 }
 
-.card-title, .card-text{
-    color: black;
+hr {
+  border-top: 1px solid #575;
 }
 
-.badge-pill, .badge-primary{
-    margin-left: 5px;
-}
-
-/*animacion*/
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-    }to{
-        opacity: 1;
-    }
-}
-
-.fadeIn{
-    animation-name: fadeIn ;
-}
-
-.animated{
-    animation-duration:  1s; -webkit-animation-duration: 1s ; animation-fill-mode: both; -webkit-animation-fill-mode:both ;
-}
-
-.img-circle{
-    border-radius: 100%; width: 150%;
-}
-
-body{
-    background-color: whitesmoke;
-    color: black;
-}
-
-hr{
-    border-top: 1px solid grey;
-}
 

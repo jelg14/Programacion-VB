@@ -1,40 +1,39 @@
-<!-- <div class="card-columns m-5 animated fadeIn">
+<h1>Categorias</h1>
+<div class="card-columns m-5 animated fadeIn">
     <div class="card puntero" (click)="getCategorie(item)" *ngFor="let item of items">
         <img [src]="item.icons | noimage" class="card-img-top" alt="Card Image">
         <div class="card-body">
             <h5 class="card-title">{{item.name}}</h5>
-            <p class="card-text">{{item.id}}</p>
-            <a [href]="item.href" class="btn btn-primary" btn-primary>ver api de categoria</a>
+            <p class="card-text">{{item.id}}</p>    
+            <!-- <a [routerLink]="['item.href']" class="btn btn-primary">Ver</a> -->
+            <a [href]="item.href" class="btn btn-primary">Ver api de categoria</a>
         </div>
     </div>
-</div> -->
+</div>
 
-
-<div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+<!-- TODO: HACER UN CARROUSEL CON LAS CATEGORIAS -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="background-color: #555555;" >
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-10" *ngIf="items.length > 0" src="{{items[6].icons[0].url}}" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h1>Popular</h1>
-        </div>
-      </div>
+        <div class="carousel-item" [class.active]="isFirs" (click)="getCategorie(item)" *ngFor="let item of items; let isFirs = first">
+            <img class="carousel-item-img" [src]="item.icons | noimage" alt="Card image">
+            <div class="carousel-caption d-none d-md-block">
+            <div style="width: 700px!important; margin: auto!important;padding-left: 50px;">
+                <h5>{{ item.name }}</h5>
+                <p>{{ item.id }}</p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, quia obcaecati exercitationem delectus rerum excepturi saepe, eveniet deleniti voluptates dolore perspiciatis inventore quos, in nesciunt reprehenderit facilis accusantium cumque vel!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum temporibus hic eos error labore ex eaque culpa impedit beatae, exercitationem illo deserunt iure dolor sunt voluptatum, quas nam magni sit!
+                <a [href]="item.href" >Ver api de categoria</a>
 
-      <div class="carousel-item" (click)="getCategorie(item)" *ngFor="let item of items">
-        <img [src]="item.icons | noimage" class="d-block" alt="Image">
-        <div class="carousel-caption d-none d-md-block">
-          <h1 class="slide-title">{{item.name}}</h1>
-           <a [href]="item.href" class="enlaceCategoria">ver api de categoria</a>
+            </div>
         </div>
-
-      </div>
+        
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
     </a>
-  </div>
-
+</div>

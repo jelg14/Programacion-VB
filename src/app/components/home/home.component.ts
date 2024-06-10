@@ -6,6 +6,7 @@ import { CategoriasComponent } from '../categorias/categorias.component';
 import { SpotifyService } from '../../services/service.service';
 import { take, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { error } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -19,27 +20,30 @@ export class HomeComponent implements OnInit {
   albums: any;
   nuevasCanciones : any[] = []
   categorias : any[] = []
-  artistas: any [] = []
   loading : boolean = false
   error : boolean = false
   mensajeError : string =""
 
   constructor(private spotify :SpotifyService){
   }
-
   ngOnInit(): void {
     this.spotify.getArtist2().subscribe(artist => {
       this.artist = artist;
-      //console.log(artist);
+      // console.log(artist);
     });
     this.spotify.getNewReleases().subscribe(data => {
       this.albums = data.albums.items;
-      //console.log(data);
+      // console.log(data);
+    }, error => {
+      console.log(error);
+      this.error = true;
+      this.loading = false;
+      this.mensajeError = error.error.error.message;
     });
 
     this.spotify.getCaterogies().subscribe(data => {
       this.categorias = data.categories.items;
-      //console.log(this.categorias);
+      // console.log(data);
       this.loading = false;
     }, error => {
       this.error = true;
@@ -47,15 +51,10 @@ export class HomeComponent implements OnInit {
       this.mensajeError = error.error.error.message;
     });
 
+    // this.spotify.getBearerToken().subscribe(token=>{
+    //   console.log('token para acceso: '+token)
+    // })
 
-    this.spotify.getArtists("genre:rock").subscribe(data => {
-      this.artist = data.artists.items;
-    }, error=>{
-      this.error = true;
-      this.loading = false;
-      this.mensajeError = error.error.error.message;
-      
-    });
   }
 }
 

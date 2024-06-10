@@ -11,11 +11,9 @@ import { NoimagePipe } from '../../pipes/noimage.pipe';
 })
 export class CategoriasComponent {
   @Input() items: any[] = [];
-
-
-  getCategorie(item:any){
+  getCategorie(item: any) {
     let categoryId;
-    if(item.type === 'category'){
+    if(item.type === 'category') {
       categoryId = item.id;
     }else{
       categoryId = item.categories[0].id;
