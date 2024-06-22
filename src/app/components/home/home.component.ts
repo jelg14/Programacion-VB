@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   loading : boolean = false
   error : boolean = false
   mensajeError : string =""
+  dinner : any;
 
   constructor(private spotify :SpotifyService){
   }
@@ -50,6 +51,11 @@ export class HomeComponent implements OnInit {
       this.loading = false;
       this.mensajeError = error.error.error.message;
     });
+
+    this.spotify.getCategorieDinner().subscribe(listado=>{
+      this.dinner = listado.playlists.items;
+      console.log(this.dinner[0])
+    })
 
     // this.spotify.getBearerToken().subscribe(token=>{
     //   console.log('token para acceso: '+token)

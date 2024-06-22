@@ -34,6 +34,10 @@ export class SpotifyService {
     );
   }
 
+  getCategorieDinner(): Observable<any> {
+    return this.getQuery('browse/categories/dinner/playlists');
+  }
+
   getArtist2(): Observable<any> {
     return this.getQuery('artists/0TnOYISbd1XYRBk9myaseg');
   }

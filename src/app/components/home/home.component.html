@@ -6,12 +6,40 @@
     </p>
 </div>
 <h1>Nuevas canciones ó nuevos lanzamientos</h1>
-<app-tarjetas [items] ="albums"></app-tarjetas> 
-<app-categorias [items] ="categorias"></app-categorias>
-<!-- 
+<app-tarjetas [items] ="albums"></app-tarjetas>
+<!-- <app-categorias [items] ="categorias"></app-categorias> -->
+
+<!--
 <div *ngIf="artist">
     <h2>{{ artist.name }}</h2>
     <div *ngFor="let image of artist.images">
       <img [src]="image.url" [alt]="artist.name">
     </div>
   </div> -->
+
+<h1>SECCION EXAMEN FINAL</h1>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(20,20,43,1) 35%, rgba(0,212,255,1) 100%);" >
+  <div class="carousel-inner">
+      <div class="carousel-item" [class.active]="isFirs" *ngFor="let item of dinner; let isFirs = first">
+          <div *ngFor="let image of item.images">
+            <img class="carousel-item-img" [src]="image.url" alt="Card image">
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+          <div style="width: 1000px!important; margin-top: -150px;">
+              <h5 style="color: rgb(100, 17, 177); font-size: 200%;"><strong>{{ item.name }}</strong></h5>
+              <p style="margin-left: 5%; font-size: 150%;">{{item.description}}</p>
+          </div>
+      </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+  </a>
+</div>
+
